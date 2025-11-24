@@ -1,0 +1,10 @@
+{
+  "name": "site-patrick-morin-rembourrage",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Site vitrine statique pour Patrick Morin Rembourrage",
+  "scripts": {
+    "dev": "npx --yes serve . --listen 3000 --single"
+  }
+}
+
