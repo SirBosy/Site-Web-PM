@@ -337,22 +337,27 @@ main {
 }
 .comfort-options {
   display: inline-flex;
-  gap: 12px;
+  gap: 16px;
   align-items: center;
   flex-wrap: wrap;
 }
 .comfort-choice {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.1;
+  min-height: 24px;
 }
 .comfort-choice input {
   accent-color: var(--gold);
   width: 20px;
   height: 20px;
   margin: 0;
+  flex-shrink: 0;
+}
+.comfort-choice span {
+  display: inline-block;
 }
 .comfort-note {
   margin: 0;
