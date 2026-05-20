@@ -304,6 +304,14 @@ main {
   object-fit: cover;
   display: block;
 }
+.work-item-wide {
+  grid-column: 1 / -1;
+}
+.work-item-wide img {
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
+}
 
 /* À propos */
 .about-inner {
