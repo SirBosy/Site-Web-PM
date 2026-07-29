@@ -22,3 +22,10 @@ dist/
 
 # Misc
 *.zip
+
+# Secrets (ajoute lors de la migration hors iCloud)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
