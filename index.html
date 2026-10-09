@@ -8,13 +8,53 @@
       name="description"
       content="Spécialiste en rembourrage de meubles antiques, classiques et modernes à Québec."
     />
+    <meta name="theme-color" content="#14110D" />
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@500;700&display=swap"
+      rel="preload"
+      as="image"
+      href="assets/img/homepagepm-m.webp"
+      type="image/webp"
+      media="(max-width: 767px) and (max-aspect-ratio: 3/4)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/img/homepagepm.webp"
+      type="image/webp"
+      media="not all and (max-width: 767px) and (max-aspect-ratio: 3/4)"
+      fetchpriority="high"
+    />
+    <script>
+      /* Active les animations du hero dès le premier rendu (sans JS : rien n'est caché) */
+      (function (d) {
+        var h = d.documentElement,
+          done = false;
+        h.classList.add("js");
+        function go() {
+          if (!done) {
+            done = true;
+            h.classList.add("hero-ready");
+          }
+        }
+        var mobile =
+          window.matchMedia &&
+          matchMedia("(max-width: 767px) and (max-aspect-ratio: 3/4)").matches;
+        var i = new Image();
+        i.onload = i.onerror = go;
+        i.src = mobile ? "assets/img/homepagepm-m.webp" : "assets/img/homepagepm.webp";
+        setTimeout(go, 1200);
+      })(document);
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400&family=Jost:wght@400..600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/style.css?v=2" />
+    <link rel="stylesheet" href="assets/style.css?v=4" />
     <meta name="color-scheme" content="light" />
   </head>
   <body>
@@ -441,8 +481,8 @@
 
     <script
       src="https://cdn.jsdelivr.net/npm/heic2any/dist/heic2any.min.js"
-      defer
+      async
     ></script>
-    <script src="assets/script.js" defer></script>
+    <script src="assets/script.js?v=3" defer></script>
   </body>
 </html>
